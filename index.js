@@ -23,13 +23,25 @@ const cards = [
   },
 ];
 
-const onlyCardWithIdTwo = null;
+const onlyCardWithIdTwo = cards.filter(card => card.id == 2);
+// console.log(onlyCardWithIdTwo);
 
-const allCardsWith3Tags = null;
+const allCardsWith3Tags = cards.filter((card) => card.tags.length == 3);
+// console.log(allCardsWith3Tags);
 
-const allCardsThatAreNotBookmarked = null;
+const allCardsThatAreNotBookmarked = cards.filter(
+  (card) => card.hasOwnProperty("isBookmarked") && card.isBookmarked === false
+);
+// console.log(allCardsThatAreNotBookmarked);
 
-const allCardsWithTagsHTMLOrJSThatAreBookmarked = null;
+const allCardsWithTagsHTMLOrJSThatAreBookmarked = cards.filter(
+  (card) =>
+    (card.tags.toString().toLowerCase().includes("html") ||
+    card.tags.toString().toLowerCase().includes("js")) && (
+    card.hasOwnProperty("isBookmarked") &&
+      card.isBookmarked == true))
+;
+  console.log('last 2', allCardsWithTagsHTMLOrJSThatAreBookmarked);
 
 export {
   onlyCardWithIdTwo,
